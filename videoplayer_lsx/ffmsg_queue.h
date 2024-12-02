@@ -50,5 +50,5 @@ void msg_queue_destroy(MessageQueue *q);
 void msg_queue_abort(MessageQueue *q);
 void msg_queue_start(MessageQueue *q);
 void msg_queue_get(MessageQueue *q, AVMessage *msg, int block);
-void msg_queue_remove(MessageQueue *q, int what)
+void msg_queue_remove(MessageQueue *q, int what);
 #endif // FFMSG_QUEUE_H
