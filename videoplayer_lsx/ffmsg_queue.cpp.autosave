@@ -1,0 +1,29 @@
+#include "ffmsg_queue.h"
+
+void msg_free_res(AVMessage *msg)
+{
+    if(!msg||!msg->obj){
+        return;
+    }
+    msg->free_l(msg->obj);
+    msg->obj=NULL;
+}
+
+int msg_queue_put_private(MessageQueue *q, AVMessage *msg)
+{
+    AVMessage * temp=q->recycle_msg;
+    if(q->abort_request)
+        return -1;
+    if(temp){
+        q->recycle_msg=temp->next;
+        q->recycle_count++;
+    }else{
+        q->alloc_count++;
+        temp=(AVMessage)av_malloc(sizeof(AVMessage));
+    }
+    *temp=*msg;
+    temp->next=NULL;
+    if(!q->last_msg)
+        q->first_msg->next=temp;
+    q->last_msg->next=temp;
+}
