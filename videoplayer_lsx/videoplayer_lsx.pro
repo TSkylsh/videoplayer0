@@ -54,7 +54,8 @@ HEADERS += \
     show.h \
     title.h \
     playlist.h \
-    ffmsg_queue.h
+    ffmsg_queue.h \
+    ff_ffmsg.h
 
 FORMS += \
         mainwid.ui \

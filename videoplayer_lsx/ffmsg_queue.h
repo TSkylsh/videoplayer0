@@ -1,5 +1,6 @@
 #ifndef FFMSG_QUEUE_H
 #define FFMSG_QUEUE_H
+extern "C"{
 #include "SDL.h"
 #include <stdbool.h>
 #include <assert.h>
@@ -13,6 +14,8 @@
 #include "libavutil/opt.h"
 #include "libavutil/version.h"
 #include "libswresample/swresample.h"
+#include "ff_ffmsg.h"
+}
 typedef struct AVMessage
 {
     int what;
@@ -49,6 +52,6 @@ void msg_queue_flush(MessageQueue *q);
 void msg_queue_destroy(MessageQueue *q);
 void msg_queue_abort(MessageQueue *q);
 void msg_queue_start(MessageQueue *q);
-void msg_queue_get(MessageQueue *q, AVMessage *msg, int block);
+int msg_queue_get(MessageQueue *q, AVMessage *msg, int block);
 void msg_queue_remove(MessageQueue *q, int what);
 #endif // FFMSG_QUEUE_H

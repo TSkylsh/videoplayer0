@@ -1,0 +1,15 @@
+INPUT(
+./debug\main.o
+./debug\mainwid.o
+./debug\ctrlbar.o
+./debug\show.o
+./debug\title.o
+./debug\playlist.o
+./debug\ffmsg_queue.o
+./debug\qrc_icon.o
+./debug\moc_mainwid.o
+./debug\moc_ctrlbar.o
+./debug\moc_show.o
+./debug\moc_title.o
+./debug\moc_playlist.o
+);

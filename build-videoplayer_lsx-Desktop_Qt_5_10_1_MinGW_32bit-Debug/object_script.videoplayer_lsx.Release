@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwid.o
+./release\ctrlbar.o
+./release\show.o
+./release\title.o
+./release\playlist.o
+./release\ffmsg_queue.o
+./release\qrc_icon.o
+./release\moc_mainwid.o
+./release\moc_ctrlbar.o
+./release\moc_show.o
+./release\moc_title.o
+./release\moc_playlist.o
+);
