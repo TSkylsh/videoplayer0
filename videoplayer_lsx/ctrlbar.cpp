@@ -23,5 +23,5 @@ CtrlBar::~CtrlBar()
 
 void CtrlBar::on_PlayOrPauseBtn_clicked()
 {
-    qDebug()<<"on_PlayOrPauseBtn_clicked";
+    emit this->SigPlayorPause();
 }

@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainWid *ui;
+    bool ConnectSignSlot();
+
+private slots:
+    void PlayOrPauseBtn_clicked();
 };
 
 #endif // MAINWID_H

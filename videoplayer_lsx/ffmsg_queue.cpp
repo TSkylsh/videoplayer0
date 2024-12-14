@@ -136,6 +136,7 @@ int msg_queue_get(MessageQueue *q, AVMessage *msg, int block)
             msg1->next = q->recycle_msg;
             q->recycle_msg = msg1;
             ret = 1;
+            break;
         }
         else if (!block)
         {
